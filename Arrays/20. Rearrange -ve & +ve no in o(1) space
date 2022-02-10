@@ -1,0 +1,6 @@
+simplest way:- Take two arrays, separate the -ve and +ve integers, then merge them in required way in the original array. o(n) time o(n) space.
+
+if order of the no is not important:- Then take two pointers from both ends, and keep on moving and swapping whenever necessary. o(n) time o(1) space.
+
+Final solution:-
+
