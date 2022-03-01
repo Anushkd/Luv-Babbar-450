@@ -1,0 +1,42 @@
+1. One non repeating:-
+
+int singleNumber(vector<int> nums) 
+    {
+        vector <int> ans;
+        int n= nums.size();
+        int Xor= nums[0];
+        
+        for(int i=1;i<n;i++)
+        Xor= Xor^nums[i];
+        
+        return Xor;
+    }
+
+2. Two non repeating:-
+
+vector<int> singleNumber(vector<int> nums) 
+    {
+        vector <int> ans;
+        int n= nums.size();
+        int Xor= nums[0];
+        
+        for(int i=1;i<n;i++)
+        Xor= Xor^nums[i];
+        
+        int set_bit_no= Xor&(~(Xor-1));
+        
+        int x= 0, y= 0;
+        
+        for(int i=0;i<n;i++)
+        {
+            if(set_bit_no&nums[i])
+            x= x^nums[i];
+            else
+            y= y^nums[i];
+        }
+        
+        ans.push_back(min(x, y));
+        ans.push_back(max(x, y));
+        
+        return ans;
+    }
