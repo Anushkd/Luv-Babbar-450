@@ -1,1 +1,11 @@
-Krte hai prabandh aap chinta mt kijiye
+int copyBits(int a, int b, int l, int r)
+{
+    int x= (1 << (r-l+1));
+    x= x-1;
+    x= (x << (l-1));
+    
+    x= x&a;
+    x= x|b;
+    
+    return x;
+}
